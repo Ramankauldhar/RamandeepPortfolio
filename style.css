@@ -265,6 +265,7 @@ body {
     display: inline;
     width: 100%;
     border: 0vw;
+    transition: transform 1s ease-in-out;
 }
 
 .col {
@@ -273,8 +274,7 @@ body {
 
 .card:hover {
     background-color: grey;
-    scale: 1.1;
-    transition: ease-in-out;
+    transform: scaleY(1.1);
 }
 
 .odd {
