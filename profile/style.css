@@ -1,0 +1,571 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: "Montserrat";
+    box-sizing: border-box;
+}
+
+*::selection {
+    color: white;
+    background-color: black;
+}
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+}
+
+/*--------------All heading------------------------------------------------*/
+.headings {
+    font-size: 5vw;
+    margin-top: 20px;
+    text-align: center;
+}
+
+/*--------------Cursor------------------------------------------------*/
+#cursor {
+    height: 120px;
+    width: 120px;
+    background-color: rgb(213, 213, 213);
+    border-radius: 50%;
+    position: fixed;
+    z-index: 99;
+    transform: translate(5%, 5%);
+}
+
+/*----------------------------MainContainer----------------------------------*/
+.mainContainer {
+    width: 100%;
+}
+
+/*--------------Loader Section------------------------------------------------*/
+#loader {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 9999;
+    width: 100%;
+    height: 100%;
+    background-color: white;
+    animation: loaderAnimation2 3s cubic-bezier(0.19, 1, 0.22, 1) 3s both;
+}
+
+#wrapperLoad {
+    width: auto;
+    height: 120px;
+    overflow: hidden;
+    text-align: center;
+    padding: 2px;
+}
+
+.loaderContent {
+    width: auto;
+    height: 120px;
+}
+
+#wrapperLoad .loaderContent:nth-child(1) {
+    animation: loaderAnimation 1s cubic-bezier(0.19, 1, 0.22, 1) 1s both;
+}
+
+#wrapperLoad .loaderContent:nth-child(2) {
+    animation: loaderAnimation 1s cubic-bezier(0.19, 1, 0.22, 1) 2s both;
+}
+
+/*---------------- NavBar ------------------------*/
+.navBarContainer {
+    width: 100%;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: orangered;
+    border-bottom-left-radius: 2px;
+    margin: auto;
+    position: sticky;
+    top: 0;
+    left: 0;
+}
+
+.navBar img {
+    height: inherit;
+    border-top-right-radius: 50%;
+    border-bottom-right-radius: 50%;
+}
+
+.navBarLeft {
+    padding-right: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.navBarLeft a {
+    text-decoration: none;
+    color: white;
+    font-size: 20px;
+    font-weight: 900;
+    margin: 15px;
+    letter-spacing: 2px;
+    opacity: 0.7;
+    padding: 5px;
+    cursor: pointer;
+}
+
+.navBarLeft a:hover {
+    color: orangered;
+    background-color: white;
+    border-top-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    opacity: 0.9;
+}
+
+.navBarLeft a.active_link {
+    color: orangered;
+    background-color: white;
+}
+
+.mobileMenuToggle {
+    display: none;
+    cursor: pointer;
+}
+
+/*---------------------------IntroSection----------------------------------*/
+.introSection {
+    width: 95%;
+    height: auto;
+    margin: 0 auto;
+    padding: 50px;
+    display: flex;
+    background-color: rgb(236, 239, 239);
+}
+
+.leftIntroSection {
+    width: 50%;
+    height: auto;
+    padding: 50px 20px;
+}
+
+.text1 {
+    font-size: 20px;
+}
+
+.text2 {
+    font-size: 40px;
+    color: orangered;
+    background: linear-gradient(to right,
+            orangered,
+            yellow);
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+}
+
+.text3 {
+    font-weight: 600;
+    font-size: 20px;
+    margin-top: 10px;
+    letter-spacing: 6px;
+}
+
+.text4 {
+    margin-top: 20px;
+    text-align: justify;
+    font-size: 20px;
+}
+
+.text5 {
+    font-weight: 900;
+    font-size: 25px;
+    padding: 2px;
+}
+
+/* The actual timeline (the vertical ruler) */
+.timeline {
+    position: relative;
+    max-width: 100%;
+    margin: 0 auto;
+}
+
+/* The actual timeline (the vertical ruler) */
+.timeline::after {
+    content: '';
+    position: absolute;
+    width: 6px;
+    background-color: orangered;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    margin-left: -3px;
+}
+
+/* Container around content */
+.container {
+    padding: 10px 40px;
+    position: relative;
+    width: 50%;
+}
+
+/* The circles on the timeline */
+.container::after {
+    content: '';
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    right: -12px;
+    background-color: yellow;
+    border: 4px solid orangered;
+    top: 15px;
+    border-radius: 50%;
+    z-index: 1;
+}
+
+/* Place the container to the right */
+.right {
+    left: 2%;
+}
+
+/* Fix the circle for containers on the right side */
+.right::after {
+    left: -22px;
+}
+
+/* The actual content */
+.content {
+    padding: 5px;
+    background-color: rgb(230, 228, 228);
+    position: relative;
+    border-radius: 6px;
+}
+
+.rightIntroSection {
+    width: 50%;
+    margin: 50px auto;
+    padding: 10px;
+}
+
+.rightIntroSection img {
+    width: 100%;
+    max-height: 60vh;
+    border-radius: 50%;
+    margin: 0 auto;
+    padding: 0 10%;
+}
+
+/*------------------SkillsSection--------------------*/
+.skillsContainer {
+    width: 90%;
+    margin-top: 50px;
+    margin: auto;
+}
+
+.card {
+    display: inline;
+    width: 100%;
+    border: 0vw;
+}
+
+.col {
+    padding: 5px;
+}
+
+.card:hover {
+    background-color: grey;
+    scale: 1.1;
+    transition: ease-in-out;
+}
+
+.odd {
+    background-color: lightgray;
+}
+
+.even {
+    background-color: rgb(238, 235, 235);
+}
+
+.card-title {
+    font-weight: 900;
+    font-size: 18px;
+}
+
+/*--------------------- ProjectSection ----------------------------------*/
+.projectContainer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 90%;
+    margin: auto;
+    margin-top: 20px;
+}
+
+.projectDiv {
+    width: calc(50% - 20px);
+    padding: 5px;
+    margin: 10px;
+    text-align: center;
+    position: relative;
+    transition: opacity 0.3s ease;
+}
+
+.projectDiv h3 {
+    text-align: center;
+}
+
+.projectContainer img {
+    width: 100%;
+    height: 60vh;
+    padding: 5px;
+    position: relative;
+    margin: auto;
+}
+
+.projectContainer img:hover {
+    opacity: 0.5;
+}
+
+#projectContent1,
+#projectContent2,
+#projectContent3,
+#projectContent4,
+#projectContent5,
+#projectContent6 {
+    display: none;
+    position: absolute;
+    top: 80%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    padding: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+
+/*------------------CertificateSection---------------------*/
+#certificatesSection {
+    background-color: grey;
+}
+
+.carousel {
+    width: 95%;
+    margin: auto;
+}
+
+.conatiner,
+.pro {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    background-color: rgb(185, 184, 184);
+    padding: 10px;
+}
+
+button {
+    border-color: black;
+    background-color: rgb(174, 176, 176);
+    width: 50px;
+}
+
+.carousel-item {
+    text-align: center;
+}
+
+.carousel-item img {
+    width: 80%;
+    height: 100vh;
+}
+
+.responsiveImage {
+    width: 600;
+    height: 400;
+}
+
+
+/*---------------------Footer--------------------------------*/
+.contactInfoContainer {
+    display: block;
+    background-color: rgb(244, 230, 225);
+    height: max-content;
+    font-size: 20px;
+    text-align: center;
+    padding: 20px;
+}
+
+.contactInfoContainer i {
+    padding: 2px;
+    font-size: 20px;
+}
+
+.contactInfoContainer a {
+    cursor: pointer;
+    color: black;
+    font-size: 25px;
+    letter-spacing: 2px;
+}
+
+.contactInfoContainer span {
+    letter-spacing: 1px;
+    font-size: 20px;
+}
+
+.contactInfoContainer .linksText {
+    font-size: 25px;
+    font-weight: 800;
+}
+
+
+/*---------------------Animations----------------------*/
+.animation {
+    position: relative;
+    transition: 2s;
+}
+
+.animationFromRight {
+    animation: moveFromRight 2s linear 3s;
+}
+
+.animationFromRight2 {
+    animation: moveFromRight2 2s linear;
+}
+
+.animationFromLeft {
+    animation: moveFromLeft 2s linear 3s;
+}
+
+.animationFromBottom {
+    animation: moveFromBottom 2s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+}
+
+
+@keyframes moveFromBottom {
+    0% {
+        transform: translateY(20px);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+}
+
+@keyframes moveFromLeft {
+    0% {
+        transform: translateX(-50px);
+    }
+
+    100% {
+        transform: translateX(0);
+    }
+}
+
+@keyframes moveFromRight {
+    0% {
+        transform: translateX(50px);
+    }
+
+    100% {
+        transform: translateX(0);
+    }
+}
+
+@keyframes moveFromRight2 {
+    0% {
+        transform: translateX(100px);
+    }
+
+    100% {
+        transform: translateX(0);
+    }
+}
+
+@keyframes loaderAnimation {
+    to {
+        margin-top: -120px;
+    }
+}
+
+@keyframes loaderAnimation2 {
+    to {
+        transform: translateY(-100%);
+    }
+}
+
+/*---------------Media queries---------------------*/
+@media (max-width: 1300px) {
+    .projectContainer img {
+        height: auto;
+        object-fit: contain;
+    }
+
+    .rightIntroSection {
+        padding: 5px;
+    }
+}
+
+@media (max-width:1050px) {
+    .carousel-item img {
+        width: 80%;
+        height: auto;
+    }
+}
+
+@media (max-width: 850px) {
+    .navBarLeft {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 80px;
+        right: 0;
+        width: 50%;
+        background-color: orangered;
+        border-bottom-left-radius: 2px;
+    }
+
+    .navBarLeft.show {
+        display: flex;
+    }
+
+    .navBarLeft a {
+        margin: 0;
+        padding: 15px;
+        text-align: center;
+        width: 100%;
+        box-sizing: border-box;
+        border-bottom: 1px solid white;
+    }
+
+    .mobileMenuToggle {
+        display: block;
+        margin: 15px;
+        font-size: 20px;
+        font-weight: 800;
+        background-color: yellow;
+        -webkit-text-fill-color: transparent;
+        -webkit-background-clip: text;
+    }
+
+    .projectDiv {
+        width: calc(100% - 20px);
+    }
+}
+
+@media screen and (max-width:780px) {
+    .introSection {
+        display: block;
+        padding: 5px;
+    }
+
+    .leftIntroSection {
+        width: 100%;
+        padding: 5px;
+    }
+
+    .rightIntroSection img {
+        display: none;
+    }
+}
+
+@media screen and (max-width:400px) {
+    .card {
+        display: block;
+    }
+}
