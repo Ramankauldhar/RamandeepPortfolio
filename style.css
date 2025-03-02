@@ -413,6 +413,10 @@ button {
     font-weight: 800;
 }
 
+.projectContainer div{
+    background-color: rgb(214, 210, 210);
+}
+
 
 /*---------------------Animations----------------------*/
 .animation {
